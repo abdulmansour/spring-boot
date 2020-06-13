@@ -12,4 +12,10 @@ public class RESTController {
     public String index() {
         return "Hello world! Time on server is " + LocalDateTime.now();
     }
+
+    @GetMapping("/marathon")
+    public String marathon() {
+        return "Run a 5k marathon!";
+    }
+
 }
