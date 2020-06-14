@@ -1,13 +1,10 @@
-package com.abdulmansour.springboot.demo.rest;
+package com.abdulmansour.springboot.demo.controller;
 
-import com.abdulmansour.springboot.demo.dao.EmployeeDAO;
 import com.abdulmansour.springboot.demo.entity.Employee;
 import com.abdulmansour.springboot.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
