@@ -36,22 +36,27 @@ public class RESTController {
     }
 
     @PostMapping("/employees")
-    public void saveEmployee(@RequestBody Employee employee) {
+    public Employee saveEmployee(@RequestBody Employee employee) {
+        System.out.println(employee);
         employee.setId(0);
         employeeService.save(employee);
+        return employee;
     }
 
     @PutMapping("/employees")
-    public void updateEmployee(@RequestBody Employee employee) {
+    public Employee updateEmployee(@RequestBody Employee employee) {
         employeeService.save(employee);
+        return employee;
     }
 
     @DeleteMapping("/employees/{employeeId}")
-    public void deleteEmployee(@PathVariable int employeeId) {
+    public String deleteEmployee(@PathVariable int employeeId) {
         Employee employee = employeeService.findById(employeeId);
         if (employee == null) {
             throw new RuntimeException("Invalid employee id - " + employeeId);
         }
         employeeService.deleteById(employeeId);
+
+        return "Deleted employee with id - " + employeeId;
     }
 }
