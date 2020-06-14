@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class RESTExceptionHandler {
 
     @ExceptionHandler
-    public ResponseEntity<ErrorResponse> exceptionHandler(Exception exc) {
+    public ResponseEntity<ErrorResponse> exceptionHandler(RuntimeException exc) {
         ErrorResponse error = new ErrorResponse(HttpStatus.BAD_REQUEST.value(), exc.getMessage(), System.currentTimeMillis());
         return new ResponseEntity<ErrorResponse>(error, HttpStatus.BAD_REQUEST);
     }
