@@ -38,7 +38,6 @@ public class RESTController {
     @PostMapping("/employees")
     public Employee saveEmployee(@RequestBody Employee employee) {
         System.out.println(employee);
-        employee.setId(0);
         employeeService.save(employee);
         return employee;
     }
